@@ -212,7 +212,7 @@ jobs:
           name: Run migrations
           command: |
             cd backend
-            npm install
+            npm ci
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
