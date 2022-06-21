@@ -216,10 +216,10 @@ jobs:
             touch migres.txt
             npm run migrations > migres.txt
             cat migres.txt
-            npm audit fix --force --audit-level=critical
-            #One Time seems to not work for some reason
-            npm audit fix --force --audit-level=critical
-            npm audit --audit-level=critical
+            # npm audit fix --force --audit-level=critical
+            # #One Time seems to not work for some reason
+            # npm audit fix --force --audit-level=critical
+            # npm audit --audit-level=critical
       - run:
           name: Save Migration Results
           command: |
