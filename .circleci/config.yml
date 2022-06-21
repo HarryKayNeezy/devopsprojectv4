@@ -74,8 +74,6 @@ jobs:
             cd backend
             npm install
             npm run build
-            npm audit fix
-            npm audit fix --audit-level=critical --force
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
@@ -136,7 +134,7 @@ jobs:
             cd backend
             npm install
             npm audit fix --force --audit-level=critical
-            #twice for npm fix audit to work
+            #One Time seems to not work for some reason
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
 
@@ -207,17 +205,14 @@ jobs:
 
   run-migrations:
     docker:
-      - image: circleci/node:13.8.0
+      - image: cimg/node:13.8.0
     steps:
       - checkout
       - run:
           name: Run migrations
           command: |
             cd backend
-            npm install --force
-            npm audit fix --force --audit-level=critical
-            npm audit fix --force --audit-level=critical
-            npm audit fix --audit-level=critical
+            npm install
             touch migres.txt
             npm run migrations > migres.txt
             cat migres.txt
