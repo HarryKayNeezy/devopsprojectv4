@@ -214,6 +214,8 @@ jobs:
             cd backend
             npm install
             npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
             npm audit fix --audit-level=critical
             touch migres.txt
             npm run migrations > migres.txt
