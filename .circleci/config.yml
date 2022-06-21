@@ -286,10 +286,10 @@ jobs:
              echo "NODE_ENV=production" >> frontend/.env
              echo "API_URL=${API_URL}" >> frontend/.env
              cat frontend/.env
-              curl -H "Content-Type: text/plain" \
-             -H "token: ecdfc255-81e1-4056-9efa-2d7fa10812e1" \
-             --request GET \
-             https://api.memstash.io/values/backend_url)
+            #    curl -H "Content-Type: text/plain" \
+            #  -H "token: ecdfc255-81e1-4056-9efa-2d7fa10812e1" \
+            #  --request GET \
+            #  https://api.memstash.io/values/backend_url)
        - run:
            name: Deploy frontend objects
            working_directory: ./frontend
@@ -360,8 +360,8 @@ jobs:
               export backend_url=$(curl https://kvdb.io/42mV4KeiPmRdBdCu4LhNtH/backend_url --request GET)
               echo "${backend_url}"
               curl "${backend_url}/api/status"
-              curl -H "token: ecdfc255-81e1-4056-9efa-2d7fa10812e1" \
-              --request GET https://api.memstash.io/values/backend_url)
+              # curl -H "token: ecdfc255-81e1-4056-9efa-2d7fa10812e1" \
+              # --request GET https://api.memstash.io/values/backend_url)
         - run:
             name: Frontend smoke test.
             command: |
