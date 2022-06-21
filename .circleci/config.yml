@@ -214,10 +214,7 @@ jobs:
             cd backend
             npm install
             npm i --save @nestjs/typeorm typeorm
-            npm audit fix --force --audit-level=critical
-            npm audit fix --force --audit-level=critical
-            npm audit fix --force --audit-level=critical
-            npm audit fix --force --audit-level=critical
+            npm i --save @nestjs/common
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit fix --audit-level=critical
